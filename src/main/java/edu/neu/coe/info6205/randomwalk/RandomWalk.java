@@ -8,6 +8,7 @@ import java.util.Random;
 
 public class RandomWalk {
 
+//   Initial position of man
     private int x = 0;
     private int y = 0;
 
@@ -20,7 +21,8 @@ public class RandomWalk {
      * @param dy the distance he moves in the y direction
      */
     private void move(int dx, int dy) {
-        // TO BE IMPLEMENTED
+        x = x + dx;
+        y = y +dy;
     }
 
     /**
@@ -30,6 +32,10 @@ public class RandomWalk {
      */
     private void randomWalk(int m) {
         // TO BE IMPLEMENTED
+        for (int i = 1; i<=m; i++){
+            randomMove();
+        }
+
     }
 
     /**
@@ -48,8 +54,8 @@ public class RandomWalk {
      * @return the (Euclidean) distance from the origin to the current position.
      */
     public double distance() {
-        // TO BE IMPLEMENTED
-        throw new UnsupportedOperationException("Not implemented yet");
+        double distance = Math.sqrt(Math.pow((x-0), 2) + Math.pow((y-0), 2));
+        return  distance;
     }
 
     /**
@@ -70,13 +76,19 @@ public class RandomWalk {
     }
 
     public static void main(String[] args) {
-        if (args.length == 0)
-            throw new RuntimeException("Syntax: RandomWalk steps [experiments]");
-        int m = Integer.parseInt(args[0]);
+//        if (args.length == 0)
+//            throw new RuntimeException("Syntax: RandomWalk steps [experiments]");
+//        int m = Integer.parseInt(args[0]);
+//        int n = 30;
+//        if (args.length > 1) n = Integer.parseInt(args[1]);
+
         int n = 30;
-        if (args.length > 1) n = Integer.parseInt(args[1]);
-        double meanDistance = randomWalkMulti(m, n);
-        System.out.println(m + " steps: " + meanDistance + " over " + n + " experiments");
+        int m[] = {10,20,30,40,50,60,70,80,90,100};
+        for(int j=0 ; j < m.length; j++) {
+//            j = number of steps drunken man takes
+            double meanDistance = randomWalkMulti(m[j], n);
+            System.out.println(m[j] + " steps: " + meanDistance + " over " + n + " experiments");
+        }
     }
 
 }

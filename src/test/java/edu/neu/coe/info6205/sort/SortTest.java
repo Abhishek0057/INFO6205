@@ -1,6 +1,6 @@
 package edu.neu.coe.info6205.sort;
 
-import edu.neu.coe.info6205.sort.simple.MergeSortTest;
+//import edu.neu.coe.info6205.sort.simple.MergeSortTest;
 import edu.neu.coe.info6205.util.Config;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -140,7 +140,7 @@ public class SortTest {
 
     @BeforeClass
     public static void beforeClass() throws IOException {
-        config = Config.load(MergeSortTest.class);
+//        config = Config.load(MergeSortTest.class);
     }
 
 }
